@@ -10,11 +10,12 @@ import PaginatedItems from '../components/Coins';
 const Home = () => {
     const [coins, setCoins] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState(false);
     const [data, setData] = useState({
         search: '',
         order: 'desc',
         currency: 'usd',
-    })
+    });
 
     const history = useHistory();
     const location = useLocation();
@@ -65,9 +66,15 @@ const Home = () => {
         setIsLoading(true);
 
         const fetchAPI = async () => {
-            const coinsData = await getCoin(data.currency);   
-            setCoins(reverseArray(coinsData, data.order));
-            setIsLoading(false);
+            try {
+                const coinsData = await getCoin(data.currency);   
+                setCoins(reverseArray(coinsData, data.order));
+                setIsLoading(false);
+                
+            } catch(error) {
+                setError(true);
+                setIsLoading(false);
+            }
         }
 
         fetchAPI();
@@ -86,9 +93,14 @@ const Home = () => {
                 {isLoading ? <Loading /> : (
                     <PaginatedItems  itemsPerPage={25} items={searchedCoins} currency={data.currency} />
                 )}
-                {!isLoading && searchedCoins.length === 0 && (
+                {!isLoading && searchedCoins.length === 0 && !error && (
                     <div className='flex-center'>
                         <p className='text-xl text gray-700 font-medium'>Oops, there is nothing to show!</p>
+                    </div>
+                )}
+                {error && (
+                    <div className='flex-center'>
+                        <p className='text-xl text gray-700 font-medium'>Oops, somethin went wrong!</p>
                     </div>
                 )}
             </div>
