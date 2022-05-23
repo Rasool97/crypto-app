@@ -4,7 +4,7 @@ import { getCurrencySymbol, toStringNumber } from '../helpers/functions';
 const Coin = ({image, name, symbol, currentPrice, priceChange, marketCap, currency}) => {
     
     return (
-        <li className='grid grid-cols-8 sm:grid-cols-10 md:grid-cols-12 items-center  gap-x-3 h-20 px-1 sm:px-4 text-sm lg:text-base'>
+        <li className='grid grid-cols-8 sm:grid-cols-10 md:grid-cols-12 items-center gap-x-3 h-20 px-1 sm:px-4 text-sm lg:text-base'>
             <div className='col-span-2 md:col-span-1 flex justify-center items-center'>
                 <img src={image} alt={name} className='w-10 h-10' />
             </div>

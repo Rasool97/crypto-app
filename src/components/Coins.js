@@ -67,10 +67,10 @@ const PaginatedItems = ({ itemsPerPage, items, currency }) => {
                 pageCount={pageCount}
                 renderOnZeroPageCount={null}
                 className='flex flex-wrap text-xs font-medium text-gray-700'
-                pageClassName='w-10 h-8 flex items-center justify-center border-gray-200 border-y-2 odd:border-r-2 even:border-r-2 bg-white'
-                previousClassName='w-16 px-2 h-8 flex items-center justify-center border-y-2 border-x-2 border-gray-200 rounded-l-md bg-white'
-                nextClassName='w-16  px-2 h-8 flex items-center justify-center border-y-2 border-r-2 border-gray-200 rounded-r-md bg-white'
-                breakClassName='w-20 h-8 flex items-center justify-center border-y-2 bg-white border-gray-200 border-r-2'
+                pageClassName='w-10 h-8 flex-center border-gray-200 border-y-2 odd:border-r-2 even:border-r-2 bg-white'
+                previousClassName='w-16 px-2 h-8 flex-center border-y-2 border-x-2 border-gray-200 rounded-l-md bg-white'
+                nextClassName='w-16  px-2 h-8 flex-center border-y-2 border-r-2 border-gray-200 rounded-r-md bg-white'
+                breakClassName='w-20 h-8 flex-center border-y-2 bg-white border-gray-200 border-r-2'
                 activeClassName='bg-gray-200'
                 disabledClassName='text-gray-400'
                 onPageActive={myFunc}

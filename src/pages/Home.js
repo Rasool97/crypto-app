@@ -84,7 +84,7 @@ const Home = () => {
                     order={data.order} 
                     currency={data.currency} />
                 {isLoading ? <Loading /> : (
-                    <PaginatedItems  itemsPerPage={15} items={searchedCoins} currency={data.currency} />
+                    <PaginatedItems  itemsPerPage={25} items={searchedCoins} currency={data.currency} />
                 )}
             </div>
         </main>
