@@ -86,6 +86,11 @@ const Home = () => {
                 {isLoading ? <Loading /> : (
                     <PaginatedItems  itemsPerPage={25} items={searchedCoins} currency={data.currency} />
                 )}
+                {!isLoading && searchedCoins.length === 0 && (
+                    <div className='flex-center'>
+                        <p className='text-xl text gray-700 font-medium'>Oops, there is nothing to show!</p>
+                    </div>
+                )}
             </div>
         </main>
     );

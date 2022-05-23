@@ -28,13 +28,6 @@ const getQuery = (order = '', currency = '') => {
     return query;
 }
 
-const setPage = (search, page) => {
-    const queryString = qs.parse(search);
-    queryString.page = page;
-    console.log(queryString);
-    // return `${search ? `${search}&page=${page}` : `?page=${page}` }`;
-}
-
 const reverseArray = (array, order) => {
     if(order === 'asc') {
         return array.reverse();
@@ -47,6 +40,5 @@ export {
     toStringNumber,
     getCurrencySymbol,
     getQuery,
-    setPage,
     reverseArray
 }

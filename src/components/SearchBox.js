@@ -31,7 +31,4 @@ const SearchBox = ({onChange, search, order, currency}) => {
     );
 };
 
-// query
-// ?search=steak&order=desc&currency=usd
-
 export default SearchBox;
