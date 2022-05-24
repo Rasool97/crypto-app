@@ -1,4 +1,3 @@
-import React from 'react';
 import { getCurrencySymbol, toStringNumber } from '../helpers/functions';
 
 const Coin = ({image, name, symbol, currentPrice, priceChange, marketCap, currency}) => {

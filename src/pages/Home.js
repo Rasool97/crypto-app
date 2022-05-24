@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import qs from 'query-string';
 import Loading from '../components/Loading';
 import SearchBox from '../components/SearchBox';
 import { getQuery, reverseArray } from '../helpers/functions';
 import { getCoin } from '../services/api';
-import PaginatedItems from '../components/Coins';
+import PaginatedItems from '../components/PaginatedItems';
 
 const Home = () => {
     const [coins, setCoins] = useState([]);
@@ -83,8 +83,9 @@ const Home = () => {
     const searchedCoins = coins.filter(coin => coin.name.toLowerCase().includes(data.search.toLowerCase()));
 
     return (
-        <main className='bg-gray-100 w-full min-h-screen'>
-            <div className='container py-10 px-3 sm:px-12 lg:px-20 flex flex-col gap-y-4 md:gap-y-6'>
+      <div className='w-full bg-gray-100'>
+        <div className='container py-10 px-2 w-full min-h-screen flex justify-center'>
+            <div className='w-full lg:w-8/12 2xl:10/12 flex flex-col gap-y-4 md:gap-y-6'>
                 <SearchBox 
                     onChange={changeHandler}
                     search={data.search} 
@@ -100,11 +101,12 @@ const Home = () => {
                 )}
                 {error && (
                     <div className='flex-center'>
-                        <p className='text-xl text gray-700 font-medium'>Oops, somethin went wrong!</p>
+                        <p className='text-xl text gray-700 font-medium'>Oops, something went wrong!</p>
                     </div>
                 )}
             </div>
-        </main>
+        </div>
+      </div>
     );
 };
 
